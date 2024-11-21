@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body class="">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-semibold font-monospace">Weather App</a>
+          <div class="d-flex">
+            <input class="form-control me-2" id="Latitude" type="text" placeholder="Enter Latitude...">
+            <input class="form-control me-2" id="Longitude" type="text" placeholder="Enter Longitude...">
+            <button class="btn btn-outline-success" type="submit" id="search">Search</button>
+          </div>
+        </div>
+      </nav>
+
+      <h1 class="font-monospace" id="error-data"></h1>
+      <div class="container" id="databox">
+        <h1 class="font-monospace text-center mt-5 "><span id="cityname"></span> City Weather Forcaste</h1>
+        <div class="d-flex justify-content-center">
+          <!-- First Card -->
+          <div class="card" style="width: 25rem;">
+            <div class="card-body">
+              <h3 class="card-title">Current Weather Forecaste</h3>
+              <hr>
+              <table class="table table-dark">
+                <tr>
+                  <td>Temprature</td>
+                  <td id="temperature_2m">-</td>
+                </tr>
+                <tr>
+                  <td>Humidity</td>
+                  <td id="relative_humidity_2m">-<span id="humidityunit"></span></td>
+                </tr>
+                <tr>
+                  <td>Day</td>
+                  <td id="is_day">-</td>
+                </tr>
+                <tr>
+                  <td>wind Direction</td>
+                  <td id="wind_direction_10m">-<span id="windDunit"></span></td>
+                </tr>
+                <tr>
+                  <td>wind Speed</td>
+                  <td id="wind_speed_10m">-<sapn id="windSunit"></sapn></td>
+                </tr>
+                <tr>
+                  <td>Time</td>
+                  <td id="time">-</td>
+                </tr>
+              </table>
+              <div class="card-footer text-body-info">
+                <h6 class="font-monospace text-center"><span id="state"></span> State Weather Forcaste</h6>
+              </div>
+            </div>
+          </div>
+          <!-- Second Card -->
+          <div class="card mx-2" style="width: 70rem;">
+            <div class="card-body">
+              <h3 class="card-title">Daily Weather Forecaste</h3>
+              <hr>
+              <table class="table table-dark">
+                <tr>
+                  <td>Days</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>3</td>
+                  <td>4</td>
+                  <td>5</td>
+                  <td>6</td>
+                  <td>7</td>
+                </tr>
+                <tr>
+                  <td>Temperature Max</td>
+                  <td id="temp_max_0">-</td>
+                  <td id="temp_max_1">-</td>
+                  <td id="temp_max_2">-</td>
+                  <td id="temp_max_3">-</td>
+                  <td id="temp_max_4">-</td>
+                  <td id="temp_max_5">-</td>
+                  <td id="temp_max_6">-</td>
+                </tr>
+                <tr>
+                  <td>Temperature Min</td>
+                  <td id="temp_min_0">-</td>
+                  <td id="temp_min_1">-</td>
+                  <td id="temp_min_2">-</td>
+                  <td id="temp_min_3">-</td>
+                  <td id="temp_min_4">-</td>
+                  <td id="temp_min_5">-</td>
+                  <td id="temp_min_6">-</td>
+                </tr>
+                <tr>
+                  <td>Sunrise</td>
+                  <td id="sunrise_0">-</td>
+                  <td id="sunrise_1">-</td>
+                  <td id="sunrise_2">-</td>
+                  <td id="sunrise_3">-</td>
+                  <td id="sunrise_4">-</td>
+                  <td id="sunrise_5">-</td>
+                  <td id="sunrise_6">-</td>
+                </tr>
+                <tr>
+                  <td>Sunset</td>
+                  <td id="sunset_0">-</td>
+                  <td id="sunset_1">-</td>
+                  <td id="sunset_2">-</td>
+                  <td id="sunset_3">-</td>
+                  <td id="sunset_4">-</td>
+                  <td id="sunset_5">-</td>
+                  <td id="sunset_6">-</td>
+                </tr>
+                <tr>
+                  <td>UV index Max</td>
+                  <td id="uv_max_0">-</td>
+                  <td id="uv_max_1">-</td>
+                  <td id="uv_max_2">-</td>
+                  <td id="uv_max_3">-</td>
+                  <td id="uv_max_4">-</td>
+                  <td id="uv_max_5">-</td>
+                  <td id="uv_max_6">-</td>
+                </tr>
+                <tr>
+                  <td>Wind Speed Max</td>
+                  <td id="wind_speed_max_0">-</td>
+                  <td id="wind_speed_max_1">-</td>
+                  <td id="wind_speed_max_2">-</td>
+                  <td id="wind_speed_max_3">-</td>
+                  <td id="wind_speed_max_4">-</td>
+                  <td id="wind_speed_max_5">-</td>
+                  <td id="wind_speed_max_6">-</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          </div>
+      </div>
+      <script src="Javascript/index.js"></script>
+</body>
+</html>
