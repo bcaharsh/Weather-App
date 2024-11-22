@@ -46,22 +46,13 @@ const weatherapi=async(lat,long)=>{
     const dailyobj=dailyresponse.daily;
     for(let i=0;i<=6;i++){
       document.getElementById(`temp_max_${i}`).innerHTML=`${dailyobj.temperature_2m_max[i]}°C`;
-    }
-    for(let i=0;i<=6;i++){
       document.getElementById(`temp_min_${i}`).innerHTML=`${dailyobj.temperature_2m_min[i]}°C`;
-    }
-    for(let i=0;i<=6;i++){
       document.getElementById(`sunrise_${i}`).innerHTML=dailyobj.sunrise[i];
-    }
-    for(let i=0;i<=6;i++){
       document.getElementById(`sunset_${i}`).innerHTML=dailyobj.sunset[i];
-    }
-    for(let i=0;i<=6;i++){
       document.getElementById(`uv_max_${i}`).innerHTML=dailyobj.uv_index_max[i];
-    }
-    for(let i=0;i<=6;i++){
       document.getElementById(`wind_speed_max_${i}`).innerHTML=`${dailyobj.wind_speed_10m_max[i]}km/h`;
     }
+
   }catch(e){
     console.log("Error",e);
     
